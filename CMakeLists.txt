@@ -16,7 +16,7 @@ target_include_directories(assembler_lib PUBLIC include)
 
 # Executable linked against the library
 add_executable(Assembler src/main.cpp)
-target_link_libraries(Assembler PUBLIC assembler_lib)
+target_link_libraries(Assembler PRIVATE assembler_lib)
 
 include(CTest)
 if (BUILD_TESTING)
