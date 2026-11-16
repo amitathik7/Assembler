@@ -8,10 +8,19 @@ I started Assembler to learn how financial trading systems work and how to write
 ## Status
 
 ## Build and Run
+To build the project run:
+```
+cmake -S . -B build
+cmake --build build
+```
 
 ## Architecture Overview
 
 ## Testing
+To test the project, first build it and then run:
+```
+ctest --test-dir build
+```
 
 ## Roadmap
 
