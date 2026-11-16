@@ -1,6 +1,9 @@
 # Data directory
 data/
 
+# Build directory
+build/
+
 # CMake generated files
 CMakeCache.txt
 CMakeFiles/

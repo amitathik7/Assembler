@@ -9,10 +9,16 @@ project(
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(Assembler)
+# Library that includes everything except for the main() function.
+add_library(assembler_lib)
+target_sources(assembler_lib PRIVATE src/order_book.cpp)
+target_include_directories(assembler_lib PUBLIC include)
 
-target_sources(
-    Assembler
-    PRIVATE
-    ./src/main.cpp
-)
+# Executable linked against the library
+add_executable(Assembler src/main.cpp)
+target_link_libraries(Assembler PUBLIC assembler_lib)
+
+include(CTest)
+if (BUILD_TESTING)
+    add_subdirectory(test)
+endif()
